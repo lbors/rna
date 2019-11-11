@@ -1,7 +1,7 @@
 % Recebe Xte, Dt, W, V, P
 % Retorna Yte, Ete, EQte, taxat
 
-function [Y, E, EQ, taxa] = classteste(X, D, W, V, P){
+function [Y,E,EQ,taxa]=classteste(X,D,W,V,P)
     [N,m]=size(X);
     [N,C]=size(D);
     Xa=[X ones(N,1)];
@@ -18,4 +18,3 @@ function [Y, E, EQ, taxa] = classteste(X, D, W, V, P){
     [val2,I2]=max(D');
     numacertos=sum(I==I2);
     taxa=numacertos/N;
-}

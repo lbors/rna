@@ -5,8 +5,8 @@ load experimentoclass;
 [nl,nc] = size(Xtr);    % Para treinamento
 
 % Fatore de Escala para a entrada
-Xtremin = -0,7*ones(1,nc);  % Cria uma matriz escalonada para treinamento
-Xtremax = 0,7*ones(1,nc);
+Xtremin = -0.7*ones(1,nc);  % Cria uma matriz escalonada para treinamento
+Xtremax = 0.7*ones(1,nc);
 Xtrmin = min(Xtr);  % Seleciona os menores valores da matriz
 Xtrmax = max(Xtr);
 
@@ -24,8 +24,8 @@ for h=1:numhid
     for i=1:numinic
         P=h;    % Muda a quantidade de neuronios
         [W,V,Ytre, EQtre, taxatr] = classtreino(Xtre, Dtr, P);
-        Mrt(i,h) = taxatr;
-        [Yte, Ete, EQte, taxat] = classtreino(Xte, Dt, W, V, P);
+        Mtr(i,h) = taxatr;
+        [Yte,Ete,EQte,taxat]=classteste(Xte,Dt,W,V,P);
         Mt(i,h) = taxat;
     end
 end

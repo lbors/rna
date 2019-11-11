@@ -1,7 +1,7 @@
 % Recebe Xtre, Dtr, P
 % Retorna W, V, Ytre, EQtre, taxatr
 
-function [W,V,Y,EQ,taxa] = classtreino(X,D,P){
+function [W,V,Y,EQ,taxa] = classtreino(X,D,P)
     [N,m]=size(X);
     [N,c]=size(D);
     W=randn(P,m+1); % Inicializacao aleatoria
@@ -21,4 +21,3 @@ function [W,V,Y,EQ,taxa] = classtreino(X,D,P){
     [val2,I2]=max(D');
     numacertos=sum(I==I2);
     taxa=numacertos/N;
-}
